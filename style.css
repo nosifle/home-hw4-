@@ -1,0 +1,235 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+
+body {
+    color: #000;
+    font-size: 14px;
+    line-height: 1;
+    margin: 0;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -220px;
+    width: 250px;
+    padding: 40px 25px;
+    background: grey;
+    color: white;
+    z-index: 4;
+    
+
+}
+
+.header:hover {
+    transition: left .3s ease-in-out;
+    left: 0;
+    
+}
+.header:hover:after {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.header a:hover {
+    color: orange;  
+}
+.header:after {
+    transition: opacity .3s ease-in-out;
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    right: -15px;
+    transform: rotate(90deg) translateY(-50%);
+    text-transform: uppercase;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+}
+.nav-list li {
+        margin-bottom: 15px;
+}
+.nav-list a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.animation-holder {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+}
+
+@keyframes runBox {
+    0% {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: red;
+    }
+
+    25% {
+        background: blue;
+        position: absolute;
+        left: 0;
+        top: calc(100% - 100px);
+
+    }
+
+    50% {
+        background: green;
+        position: absolute;
+        left: calc(100% - 100px);
+        top: calc(100% - 100px);
+    }
+
+    75% {
+        background: purple;
+        position: absolute;
+        left: calc(100% - 100px);
+        top: 0;
+    }
+
+    100% {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: red;
+
+    }
+}
+.animation-holder .box {
+    position: absolute;
+    top: 0;
+    left: 0;    
+    width: 100px;
+    height: 100px;
+    background: red;
+    animation: runBox 4s ease-in-out infinite;
+    z-index: 3;
+}
+
+.card-box {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #0d5825;  
+    z-index: 2;
+}
+
+.quote {
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 5%;
+    left: 34%;
+    font-size: 25px;
+    
+    
+}
+
+.quote q{
+    font-weight: bold;
+}
+
+.quote figure {
+    font-style: italic;
+}
+
+
+.card {
+    width: 150px;
+    height: 250 px;
+}
+.left {
+    position: absolute;
+    top: 48%;
+    left: 47%;
+    transform:translate(-48%, -47%) rotate(-20deg);
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-6deg)
+}
+
+.right {
+    position: absolute;
+    top: 51%;
+    left: 54%;
+    transform:translate(-51%, -54%) rotate(6deg);
+
+}
+
+.left:hover {
+    transition: all .4s ease-in-out ;
+    transform: translate(-60%, -60%) rotate(-25deg);
+}
+.center:hover {
+    transition: all .4s ease-in-out ;
+    transform: translate(-60%, -60%) rotate(-8deg);
+}
+.right:hover {
+    transition: all .4s ease-in-out ;
+    transform: translate(-55%, -70%) rotate(10deg);
+}
+
+.box-red {
+    background: red;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    transform: translate(-70%, -37%);
+    top: 70%;
+    left: 37%;
+    z-index: 3;
+}
+
+.box-blue {
+    background: blue;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    transform: translate(-80%, -42%);
+    top: 80%;
+    left: 42%;
+    z-index: 4;
+}
+
+.box-green {
+    background: violet;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    transform: translate(-90%, -47%);
+    top: 90%;
+    left: 47%;
+    z-index: 3;
+}
